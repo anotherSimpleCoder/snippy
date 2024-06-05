@@ -24,11 +24,11 @@ std::pair<float*, int> AudioMaker::openFile(std::string path) {
 }
 
 std::pair<float*, int> AudioMaker::turi() {
-  return this->openFile("turi.wav");
+  return this->openFile("res/turi.wav");
 }
 
 std::pair<float*, int> AudioMaker::ip() {
-  return this->openFile("ip.wav");
+  return this->openFile("res/ip.wav");
 }
 
 std::vector<float> AudioMaker::cleanUp(std::vector<float> audioData) {
