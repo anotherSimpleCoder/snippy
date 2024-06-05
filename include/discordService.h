@@ -1,6 +1,7 @@
 #include <dpp/dpp.h>
 #include <string>
 #include <functional>
+#include <stdexcept>
 
 #include "commandHandler.h"
 

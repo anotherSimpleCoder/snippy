@@ -16,7 +16,13 @@ DiscordService::DiscordService(std::string token, CommandHandler* commandHandler
 	});
 
 	this->discord->on_slashcommand([this](const dpp::slashcommand_t& event){
-		this->commandHandler->handle(event);
+		try {
+			this->commandHandler->handle(event);
+		} catch(const std::runtime_error& e) {
+			dpp::message reply(event.command.channel_id, e.what());
+			event.reply(reply);
+		}
+		
 	});
 }
 
